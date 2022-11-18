@@ -1,7 +1,36 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.find_or_create_by(name: '収入')
+Category.find_or_create_by(name: '支出')
+Category.find_or_create_by(name: '資産')
+Category.find_or_create_by(name: '負債')
+
+# 科目マスタ
+# 収入
+Item.find_or_create_by(category_id: 1, name: '給料', is_approved: true)
+Item.find_or_create_by(category_id: 1, name: '家賃収入', is_approved: true)
+Item.find_or_create_by(category_id: 1, name: '配当', is_approved: true)
+Item.find_or_create_by(category_id: 1, name: '利子', is_approved: true)
+Item.find_or_create_by(category_id: 1, name: '印税', is_approved: true)
+Item.find_or_create_by(category_id: 1, name: '特許使用料', is_approved: true)
+# Item.find_or_create_by(category_id: 1, name: 'その他', is_approved: true)
+# 支出
+Item.find_or_create_by(category_id: 2, name: '税金', is_approved: true)
+Item.find_or_create_by(category_id: 2, name: '家賃', is_approved: true)
+Item.find_or_create_by(category_id: 2, name: '食費', is_approved: true)
+Item.find_or_create_by(category_id: 2, name: '交通費', is_approved: true)
+Item.find_or_create_by(category_id: 2, name: '衣料費', is_approved: true)
+Item.find_or_create_by(category_id: 2, name: '住宅ローン返済', is_approved: true)
+Item.find_or_create_by(category_id: 2, name: '自動車ローン返済', is_approved: true)
+Item.find_or_create_by(category_id: 2, name: 'クレジットカード支払', is_approved: true)
+Item.find_or_create_by(category_id: 2, name: '学費ローン返済', is_approved: true)
+# 資産
+Item.find_or_create_by(category_id: 3, name: '不動産', is_approved: true)
+Item.find_or_create_by(category_id: 3, name: '株式', is_approved: true)
+Item.find_or_create_by(category_id: 3, name: '債券', is_approved: true)
+Item.find_or_create_by(category_id: 3, name: '手形', is_approved: true)
+Item.find_or_create_by(category_id: 3, name: '知的財産', is_approved: true)
+# 負債
+Item.find_or_create_by(category_id: 4, name: '住宅ローン', is_approved: true)
+Item.find_or_create_by(category_id: 4, name: '自動車ローン', is_approved: true)
+Item.find_or_create_by(category_id: 4, name: 'クレジットカードの未払分', is_approved: true)
+Item.find_or_create_by(category_id: 4, name: '学費ローン', is_approved: true)
+Item.find_or_create_by(category_id: 4, name: '消費者ローン', is_approved: true)

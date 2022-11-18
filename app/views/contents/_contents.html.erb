@@ -1,0 +1,21 @@
+<main>
+  <p class="text-center">損益計算書</p>
+  <section class"d-flex flex-column justify-content-center">
+    <div class="h-100 w-25 border border-dark">
+      <p>収入</p>
+      <%= render 'contents/contents_list', contents: contents %>
+    </div>
+    <div class="h-100 w-25 border border-dark">
+      <p>支出</p>
+    </div>
+  </section>
+  <p class="text-center">貸借対照表</p>
+  <section class"d-flex flex-row justify-content-center">
+    <div class="h-100 w-25 border border-dark">
+      <p class="text-center">資産</p>
+    </div>
+    <div class="h-100 w-25 border border-dark">
+      <p class="text-center">負債</p>
+    </div>
+  </section>
+</main>

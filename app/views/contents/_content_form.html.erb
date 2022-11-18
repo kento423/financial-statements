@@ -1,0 +1,15 @@
+<%= form_with(model: content) do |f| %>
+  <div class="mb-3">
+    <%= f.label :category, 'カテゴリ' %>:
+    <%= f.select :category, Category.all, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :item, '科目' %>:
+    <%= f.select :item, Item.all.where(category_id: 1), include_blank: "選択して下さい", class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= f.label :amount, '金額' %>:
+    <%= f.text_field :amount, class: 'form-control' %>
+  </div>
+  <%= f.submit 'Post', class: 'btn btn-primary w-100' %>
+<% end %>

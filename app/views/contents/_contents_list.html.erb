@@ -1,0 +1,6 @@
+<ul>
+  <%#= current_user.contents.first.name %>
+  <% contents.each do |content| %>
+    <li><%= content.item.name %></li>
+  <% end %>
+</ul>
