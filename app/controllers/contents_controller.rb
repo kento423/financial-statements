@@ -3,6 +3,7 @@ class ContentsController < ApplicationController
   before_action :correct_user, only: [:destroy]
 
   def create
+    # content = User.first.contents.build(item_id: 24, amount: 10)
     @content = current_user.contents.build(content_params)
     if @content.save
       flash[:success] = "登録に成功しました"
@@ -21,7 +22,7 @@ class ContentsController < ApplicationController
   private
   
   def content_params
-    params.require(:content).permit(:category, :item, :amount)
+    params.require(:content).permit(:item, :amount)
   end
   
   def correct_user

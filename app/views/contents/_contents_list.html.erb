@@ -1,6 +1,7 @@
 <ul>
-  <%#= current_user.contents.first.name %>
   <% contents.each do |content| %>
-    <li><%= content.item.name %></li>
+    <% if content.item.category_id == category_id %>
+      <li><%= content.item.name %></li>
+    <% end %>
   <% end %>
 </ul>

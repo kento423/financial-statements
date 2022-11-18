@@ -1,11 +1,12 @@
 <%= form_with(model: content) do |f| %>
   <div class="mb-3">
     <%= f.label :category, 'カテゴリ' %>:
-    <%= f.select :category, Category.all, class: 'form-control' %>
+    <%= f.select :category, category_pulldown_list, class: 'form-control' %>
   </div>
   <div class="mb-3">
     <%= f.label :item, '科目' %>:
-    <%= f.select :item, Item.all.where(category_id: 1), include_blank: "選択して下さい", class: 'form-control' %>
+    <!--<%= f.select :item, Item.all.where(category_id: 1), include_blank: "選択して下さい", class: 'form-control' %>-->
+    <%= f.select :item, item_pulldown_list(1), class: 'form-control' %>
   </div>
   <div class="mb-3">
     <%= f.label :amount, '金額' %>:
