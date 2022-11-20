@@ -13,11 +13,9 @@ class ContentsController < ApplicationController
       end
       redirect_to root_url
     elsif is_not_match_item_and_category(params[:content][:item_id], params[:content][:category_id])
-      binding.pry
-      flash[:danger] = "カテゴリと科目のどちらかが異なります。"
+      flash[:danger] = "カテゴリと科目の組み合わせが正しくありません。"
       redirect_to root_url
     else
-      binding.pry
       @content = current_user.contents.build(content_params)
       if @content.save
         flash[:success] = "登録に成功しました"
