@@ -1,9 +1,9 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-sm-4">
+    <aside class="col-sm-3">
       <%= render 'contents/content_form', content: @content %>
     </aside>
-    <div class="col-sm-8">
+    <div class="col-sm-9">
       <%= render 'contents/contents', contents: @contents %>
     </div>
   </div>
