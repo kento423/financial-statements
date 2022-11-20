@@ -1,8 +1,8 @@
 <ul>
   <% contents.each do |content| %>
     <% if content.item.category_id == category_id %>
-      <li>
-        <%= link_to content.item.name, content, method: :patch %>
+      <li class="d-flex justify-content-between pb-1 pe-1">
+        <%= content.item.name %>
         <%= link_to "削除", content, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
       </li>
     <% end %>

@@ -1,22 +1,22 @@
 <main>
-  <p class="text-center">損益計算書</p>
+  <p class="text-center fw-bold">損益計算書</p>
   <section class="d-flex flex-column justify-content-center align-items-center">
-    <div class="h-100 w-25 border border-dark">
+    <div class="h-100 w-50 border border-secondary">
       <p class="fw-bold">収入</p>
       <%= render 'contents/contents_list', contents: contents, category_id: 1 %>
     </div>
-    <div class="h-100 w-25 border border-dark">
+    <div class="h-100 w-50 border border-secondary">
       <p class="fw-bold">支出</p>
       <%= render 'contents/contents_list', contents: contents, category_id: 2 %>
     </div>
   </section>
-  <p class="text-center">貸借対照表</p>
+  <p class="text-center fw-bold mt-3">貸借対照表</p>
   <section class="d-flex flex-row justify-content-center">
-    <div class="h-100 w-25 border border-dark">
+    <div class="h-100 w-50 border border-secondary">
       <p class="text-center fw-bold">資産</p>
       <%= render 'contents/contents_list', contents: contents, category_id: 3 %>
     </div>
-    <div class="h-100 w-25 border border-dark">
+    <div class="h-100 w-50 border border-secondary">
       <p class="text-center fw-bold">負債</p>
       <%= render 'contents/contents_list', contents: contents, category_id: 4 %>
     </div>

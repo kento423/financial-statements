@@ -9,7 +9,7 @@ module ContentsHelper
 
     def item_pulldown_hash(category_id)
         hash = {}
-        Item.all.where(category_id: category_id).each do |i|
+        Item.all.each do |i|
             hash.store(i.name, i.id)
         end
         hash.store('その他', nil)

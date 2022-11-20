@@ -1,7 +1,7 @@
 <%= form_with(model: content) do |f| %>
   <div class="mb-3 d-flex justify-content-between">
-    <%= f.label :category, 'カテゴリ: ' %>
-    <%= f.select :category, category_pulldown_hash, class: 'form-control form-select' %>
+    <%= f.label :category_id, 'カテゴリ: ' %>
+    <%= f.select :category_id, category_pulldown_hash, class: 'form-control form-select' %>
   </div>
   <div class="mb-3 d-flex justify-content-between">
     <%= f.label :item_id, '科目: ' %>
@@ -11,6 +11,7 @@
     <%= f.label :amount, '金額: ' %>
     <%= f.text_field :amount, class: '' %>
   </div>
-  <!--更新用に分岐-->
-  <%= f.submit '登録', class: 'btn btn-primary w-25' %>
+  <div class="d-flex flex-row-reverse">
+    <%= f.submit '登録', class: 'btn btn-primary w-25' %>
+  </div>
 <% end %>
