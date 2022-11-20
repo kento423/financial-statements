@@ -1,7 +1,10 @@
 <ul>
   <% contents.each do |content| %>
     <% if content.item.category_id == category_id %>
-      <li><%= content.item.name %></li>
+      <li>
+        <%= link_to content.item.name, content, method: :patch %>
+        <%= link_to "削除", content, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+      </li>
     <% end %>
   <% end %>
 </ul>

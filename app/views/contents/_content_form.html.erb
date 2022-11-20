@@ -1,16 +1,16 @@
 <%= form_with(model: content) do |f| %>
   <div class="mb-3">
     <%= f.label :category, 'カテゴリ' %>:
-    <%= f.select :category, category_pulldown_list, class: 'form-control' %>
+    <%= f.select :category, category_pulldown_hash, class: 'form-control form-select' %>
   </div>
   <div class="mb-3">
     <%= f.label :item, '科目' %>:
     <!--<%= f.select :item, Item.all.where(category_id: 1), include_blank: "選択して下さい", class: 'form-control' %>-->
-    <%= f.select :item, item_pulldown_list(1), class: 'form-control' %>
+    <%= f.select :item_id, item_pulldown_hash(1), class: 'form-control form-select' %>
   </div>
   <div class="mb-3">
     <%= f.label :amount, '金額' %>:
-    <%= f.text_field :amount, class: 'form-control' %>
+    <%= f.text_field :amount, class: '' %>
   </div>
-  <%= f.submit 'Post', class: 'btn btn-primary w-100' %>
+  <%= f.submit 'Post', class: 'btn btn-primary w-25' %>
 <% end %>
