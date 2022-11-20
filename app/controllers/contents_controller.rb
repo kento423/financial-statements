@@ -7,23 +7,23 @@ class ContentsController < ApplicationController
       item = Item.new(category_id: params[:content][:category_id], name: 'その他', is_approved: false)
       if item.save
         content = current_user.contents.build(item_id: item.id, amount: params[:content][:amount])
-        content.save
       else
-        flash.now[:danger] = "登録に失敗しました。"
+        # たぶんこの分岐には入らない
+        flash[:danger] = "登録に失敗しました。#{item.errors.full_messages}"
       end
-      redirect_to root_url
     elsif is_not_match_item_and_category(params[:content][:item_id], params[:content][:category_id])
       flash[:danger] = "カテゴリと科目の組み合わせが正しくありません。"
       redirect_to root_url
+      return
     else
-      @content = current_user.contents.build(content_params)
-      if @content.save
-        flash[:success] = "登録に成功しました"
-      else
-        flash.now[:danger] = "登録に失敗しました。"
-      end
-      redirect_to root_url
+      content = current_user.contents.build(content_params)
     end
+    if content.save
+      flash[:success] = "登録に成功しました"
+    else
+      flash[:danger] = "登録に失敗しました。#{content.errors.full_messages}"
+    end
+    redirect_to root_url
   end
 
   def destroy
